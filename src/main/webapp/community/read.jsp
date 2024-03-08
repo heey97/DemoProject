@@ -53,7 +53,7 @@
 					<!-- textarea에 입력한 엔터는 \n db에도 \n으로 저장됩니다.
 					     브라우저 출력은 줄바꿈은 <br> 태그 해결1) pre 태그, 해결  2) \n을 <br>로 대치-->	
 					<li>
-						<pre><c:out value="${vo.content}"/></pre>
+						<textarea rows="20"  disabled="disabled" style="background-color:#white; font-size:inherit;"><c:out value="${vo.content}"/></textarea>
 					</li>				
 				</ul>
 			</li>
@@ -134,7 +134,7 @@
 				</ul>
 			</li>
 			<li>
-				<pre class="cmtcontent"><c:out value="${cmt.content }" /></pre>
+				<textarea class="cmtcontent" style="border:none; resize:none;"><c:out value="${cmt.content }" /></textarea>
 			</li>
 			</c:forEach>
 		</ul>	
@@ -144,28 +144,29 @@
 </div>
 <script type="text/javascript">
 	const user = '${user.userid}'
-	const txtarea = document.querySelector('textarea')
+	const txtarea = document.querySelector('textarea[name="content"]')
 	if(user.length !=0)
 		txtarea.placeholder = user + '님 댓글을 작성하세요.'
 
+	//댓글 등록과 삭제 모두  post 방식으로 합니다 
 	function executeCmt(fval,cidx){	/* 댓글 작성추가 와 삭제는 매개변수 f의 값으로 구별한다. idx는 매개변수는 삭제할 댓글번호 */
 		console.log(fval)
 		document.forms[0].f.value=fval
-		if(fval==='2') {
+		if(fval==='2') {	//댓글삭제 ㅎㅎ
 			document.forms[0].idx.value=cidx		/* hidden 타입 idx의 value 로 설정*/
 			const yn = confirm('댓글 삭제하시겠습니까?')
 			if(yn)	document.forms[0].submit()	
-		}else if(fval==='1'){
+		}else if(fval==='1'){	//댓글등록
 			document.forms[0].submit()			
 		}
-	}
+	}			
 	
 	function reset_content() {
 		document.forms[0].content.value=''
 	}
 	
 	function login() {
-		sessionStorage.setItem('back', location.href);
+		sessionStorage.setItem('back', location.href);		//location.href 는 현재의 요청 url 읽어옵니다.
 		location.href='../login'  // 로그인 후 글쓰기 url로 redirect 하기 위한 파라미터
 	}
 	
