@@ -77,10 +77,10 @@ public class RequestControllerMapping {
 		mapping.put(new RequestKeyValue("/logout", "GET"), new LogoutController());
 
 		//새로나온책 (파일업로드)
-//		mapping.put(new RequestKeyValue("/book/new", "GET"), new NewFormController());
-//		mapping.put(new RequestKeyValue("/book/new", "POST"), new NewBookSaveController());
-//		mapping.put(new RequestKeyValue("/book/upload", "POST"), new ApiNewBookImageUploadController());
-//		mapping.put(new RequestKeyValue("/book/list", "GET"), new NewBookListController());
+		mapping.put(new RequestKeyValue("/book/new", "GET"), new NewFormController());
+		mapping.put(new RequestKeyValue("/book/new", "POST"), new NewBookSaveController());
+		mapping.put(new RequestKeyValue("/book/upload", "POST"), new ApiNewBookImageUploadController());
+		mapping.put(new RequestKeyValue("/book/list", "GET"), new NewBookListController());
 
 		//책장
 		mapping.put(new RequestKeyValue("/book/bookcase","GET"), new BookCaseListController());
