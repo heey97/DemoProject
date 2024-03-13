@@ -29,7 +29,6 @@
       <div class="modal-body">
         	<p>${payErr}</p>
       </div>
-
       <!-- Modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" onclick="location.href='/DemoProject'">Close</button>
