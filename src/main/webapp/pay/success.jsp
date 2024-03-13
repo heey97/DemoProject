@@ -44,6 +44,7 @@
 								<div style="margin-bottom: 1em;">
 									<img src="../images/bookcase/${item.cover}" width="90px">
 								</div>
+<<<<<<< HEAD
 								<div class="info">
 									<p>
 										<span>도서명:</span> <span class="title" id="orderName"></span>(<span
@@ -57,6 +58,45 @@
 									결제카드 : <span id="cardtype"></span> <span id="method"></span> (<span
 										id="cardno"></span>)<br> 승인날짜 : <span class="title"
 										id="paydate"></span>
+=======
+							</div>
+							<div class="col-6 col-12-narrower imp-narrower">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header>
+												<h2>결제 완료</h2>
+												<h3 id="result">결제 내역입니다.</h3>
+											</header>
+											
+											<div style="margin-bottom: 1em;">
+												<img src="../images/bookcase/${item.cover}" width="90px">
+											</div>
+											<div  class="info">
+												<p>
+												<span>도서명:</span>
+												<span class="title" id="orderName"></span>(<span id="orderId"></span>)
+												</p>
+												<p>
+												<span>가격:</span>
+												<span class="title"><fmt:formatNumber value="${item.price }" pattern="###,###"/> 원</span>
+												</P>
+												<span>총 결제금액:</span>
+												<span class="title" id="amount"></span>
+												<br>
+												결제카드 : <span id="cardtype"></span> <span id="method"></span> (<span id="cardno"></span>)<br> 
+												승인날짜 : <span class="title" id="paydate"></span>
+											</div>
+											<div class="paybtn">
+												<h4>구매하신 도서는 2일 이내 도착하도록 배송해 드리겠습니다.</h4>
+												<a class="btn btn-primary ok" href="${pageContext.request.contextPath}">⛪홈</a>&nbsp;&nbsp;&nbsp;
+												<a class="btn btn-primary ok" href="../book/bookcase">📚책장더보기</a>
+											</div>
+										</article>
+
+>>>>>>> refs/heads/main
 								</div>
 								<div class="paybtn">
 									<h4>구매하신 도서는 2일 이내 도착하도록 배송해 드리겠습니다.</h4>

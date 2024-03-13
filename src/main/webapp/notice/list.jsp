@@ -3,11 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE HTML>
-<!--
-	Arcana by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
--->
 <html>
 <head>
 	<title>커피24 북카페</title>
@@ -18,7 +13,7 @@
 	<link rel="stylesheet" href="../css/layout.css" />
 	<link rel="stylesheet"
 		href="${pageContext.request.contextPath }/css/list.css?v=3">
-		<script src="https://kit.fontawesome.com/352c53403e.js" crossorigin="anonymous"></script>	
+	<script src="https://kit.fontawesome.com/352c53403e.js" crossorigin="anonymous"></script>	
 </head>
 <body class="is-preload">
 	<div id="page-wrapper">
@@ -27,11 +22,9 @@
 		<%@ include file="../layout/header.jsp"%>
 		<!-- Main -->
 		<section class="wrapper style1" id="notice">
-			<div class="container">
+		<div class="container">
 				<div id="content">
-
 					<!-- Content -->
-
 					<article>
 						<header class="guide">
 							<h3>이용안내 :: 공지사항</h3>
@@ -206,10 +199,9 @@
 	}
 	
 </script>
-
 	<div data-num="1" id="datanum"></div>
 	</div>
-
+	
 	<!-- Scripts -->
 	<script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/jquery.dropotron.min.js"></script>

@@ -1,12 +1,14 @@
 package org.iclass.dao;
 
+
 import java.util.List;
 import java.util.Map;
-
 import org.apache.ibatis.session.SqlSession;
-import org.iclass.vo.NewBooks;
 import org.iclass.vo.Notice;
 import org.iclass.vo.Paging;
+import org.apache.ibatis.session.SqlSession;
+import org.iclass.vo.Notice;
+
 
 import mybatis.SqlSessionBean;
 
@@ -17,6 +19,8 @@ public class NoticeDao {
 		return dao;
 	}
 
+
+//	페이지 목록 sql 을 위한 dao
 	public List<Notice> list(Paging paging) {
 		SqlSession mapperSession = SqlSessionBean.getSession();
 		List<Notice> list = mapperSession.selectList("notice.getList",paging);
@@ -30,14 +34,8 @@ public class NoticeDao {
 		mapperSession.close();
 		return result;
 	}
-	
-	public Notice read(int idx) {
-		SqlSession mapperSession = SqlSessionBean.getSession();
-		Notice vo = mapperSession.selectOne("notice.getOne",idx);
-		mapperSession.close();
-		return vo;
-	}
-	
+
+//	글쓰기
 	public int write(Notice notice) {
 		SqlSession mapperSession = SqlSessionBean.getSession();
 		int result = mapperSession.insert("notice.insert",notice);
@@ -45,23 +43,4 @@ public class NoticeDao {
 		mapperSession.close();
 		return result;
 	}
-	
-	public int update(Notice notice) {
-		SqlSession mapperSession = SqlSessionBean.getSession();
-		int result = mapperSession.update("notice.update",notice);
-		mapperSession.commit();
-		mapperSession.close();
-		return result;
-	}
-	
-	public int delete(int idx) {
-		SqlSession mapperSession = SqlSessionBean.getSession();
-		int result = mapperSession.update("notice.delete",idx);
-		mapperSession.commit();
-		mapperSession.close();
-		return result;
-	}
-
-	
-	
 }

@@ -15,8 +15,11 @@ public class NoticeWriteController implements Controller {
 
 	@Override
 	public void handle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	//	HttpSession session = request.getSession();
-	//	String userid = ((DemoMember)session.getAttribute("user")).getUserid();
+		HttpSession session = request.getSession();
+		DemoMember user = (DemoMember) session.getAttribute("user");
+		
+		//admin 계정만 write 권한이 있습니다. 권한 확인!!
+		if(user==null || !user.getUserid().equals("admin")) throw new RuntimeException();
 	
 		RequestDispatcher dispatcher = request.getRequestDispatcher("write.jsp");
 		dispatcher.forward(request, response);
